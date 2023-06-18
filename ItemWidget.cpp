@@ -149,9 +149,12 @@ void ItemWidget::InitTextures()
 	}
 }
 
-ItemWidget::WidgetState ItemWidget::UpdateWidgetState(const sf::Vector2f& Point)
+ItemWidget::WidgetState ItemWidget::UpdateWidgetState(sf::RenderWindow& InWindow, const sf::Vector2f& Point)
 {
-	if (ItemNameSprite.getGlobalBounds().contains(Point))
+	sf::Vector2i PixelPos = sf::Mouse::getPosition(InWindow);
+	sf::Vector2f WorldPos = InWindow.mapPixelToCoords(PixelPos);
+
+	if (ItemNameSprite.getGlobalBounds().contains(WorldPos))
 	{
 		if (sf::Mouse::isButtonPressed(sf::Mouse::Left))
 		{
@@ -159,7 +162,7 @@ ItemWidget::WidgetState ItemWidget::UpdateWidgetState(const sf::Vector2f& Point)
 		}
 		return WidgetState::Btn_Hover_Name;
 	}
-	else if (ItemDescriptionSprite.getGlobalBounds().contains(Point))
+	else if (ItemDescriptionSprite.getGlobalBounds().contains(WorldPos))
 	{
 		if (sf::Mouse::isButtonPressed(sf::Mouse::Left))
 		{
@@ -167,7 +170,7 @@ ItemWidget::WidgetState ItemWidget::UpdateWidgetState(const sf::Vector2f& Point)
 		}
 		return WidgetState::Btn_Hover_Description;
 	}
-	else if (ItemLocationSprite.getGlobalBounds().contains(Point))
+	else if (ItemLocationSprite.getGlobalBounds().contains(WorldPos))
 	{
 		if (sf::Mouse::isButtonPressed(sf::Mouse::Left))
 		{
@@ -175,7 +178,7 @@ ItemWidget::WidgetState ItemWidget::UpdateWidgetState(const sf::Vector2f& Point)
 		}
 		return WidgetState::Btn_Hover_Location;
 	}
-	else if (ItemQuantitySprite.getGlobalBounds().contains(Point))
+	else if (ItemQuantitySprite.getGlobalBounds().contains(WorldPos))
 	{
 		if (sf::Mouse::isButtonPressed(sf::Mouse::Left))
 		{
@@ -183,7 +186,7 @@ ItemWidget::WidgetState ItemWidget::UpdateWidgetState(const sf::Vector2f& Point)
 		}
 		return WidgetState::Btn_Hover_Quantity;
 	}
-	else if (ItemIDSprite.getGlobalBounds().contains(Point))
+	else if (ItemIDSprite.getGlobalBounds().contains(WorldPos))
 	{
 		if (sf::Mouse::isButtonPressed(sf::Mouse::Left))
 		{
