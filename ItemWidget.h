@@ -22,7 +22,7 @@ public:
 	void updateText();
 	void SetSpawnPosition(int x, int y);
 	void InitTextures();
-	WidgetState UpdateWidgetState(const sf::Vector2f& Point);
+	WidgetState UpdateWidgetState(sf::RenderWindow& InWindow, const sf::Vector2f& Point);
 
 private:
 
