@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Inventory>
+    <Item name="Firehose" description="Hose for fire box" location="Fire Locker" ID="1" quantity="19"/>
+    <Item name="Extinguisher number one" description="Foam Extunguishere" location="Fire Station" ID="2" quantity="2032"/>
+    <Item name="Nozzle" description="Nozzle 15cm for fire hose" location="Fire Locker" ID="3" quantity="10"/>
+    <Item name="Hydrant" description="Hydrant straight" location="Fire Locker" ID="4" quantity="30"/>
+    <Item name="SOLAS tape" description="SOLAS tape 2m" location="Forecastle store" ID="5" quantity="20"/>
+    <Item name="Lifebuoy" description="Lifebuoy 80mm diametr" location="Forecastle store" ID="6" quantity="10"/>
+    <Item name="Torch" description="Torch not for use" location="Fire Locker" ID="7" quantity="10"/>
+    <Item name="Axe" description="Axe from firefighting suit" location="Fire Station" ID="8" quantity="10"/>
+    <Item name="IMO sign" description="no" location="Paint locker" ID="9" quantity="10"/>
+    <Item name="Fireblanket" description="no" location="Fire Station" ID="10" quantity="10"/>
+    <Item name="Hydrant key" description="no" location="Fire Station" ID="11" quantity="10"/>
+    <Item name="Fire plan" description="no" location="Paint locker" ID="12" quantity="8175"/>
+    <Item name="Rubber" description="no" location="Forecastle store" ID="13" quantity="815"/>
+    <Item name="asd" description="no" location="Fire Station" ID="14" quantity="344915"/>
+</Inventory>
