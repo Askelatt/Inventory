@@ -6,12 +6,13 @@ InputHandler::InputHandler()
 
 }
 
-void InputHandler::handleInput(sf::RenderWindow& InWindow, const sf::Event& event, std::vector<ItemWidget>& widgets)
+void InputHandler::handleInput(sf::RenderWindow& InWindow, const sf::Event& event, std::vector<ItemWidget>& widgets, int startIndex, int endIndex)
 {
+    
     if (event.type == sf::Event::MouseButtonPressed)
     {
         
-        for (int i = 0; i < widgets.size(); ++i)
+        for (int i = startIndex; i < endIndex; ++i)
         {
             ItemWidget::WidgetState state = widgets[i].UpdateWidgetState(InWindow );
             if (state != ItemWidget::WidgetState::Idle)

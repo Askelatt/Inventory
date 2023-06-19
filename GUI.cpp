@@ -4,7 +4,7 @@ GUI::GUI(Inventory& InInvetory)
 	: ItemMatrix(InInvetory), PageSwitcher(ItemMatrix, 10)
 
 {
-	BackGroundTexture.loadFromFile("..\\SFML_inv\\Textures\\logo.png");
+	BackGroundTexture.loadFromFile("..\\SFML_inv\\Textures\\BackGround.png");
 	BackGroundSprite.setTexture(BackGroundTexture);
 }
 
@@ -22,7 +22,7 @@ void GUI::runApp(Inventory& InInventory)
 				Window.close();
 				DataHandler.saveInventoryToFile(InInventory.GetInventory());
 			}
-			Handler.handleInput(Window,WindowEvent, ItemMatrix.GetWidgets());
+			Handler.handleInput(Window,WindowEvent, ItemMatrix.GetWidgets(), PageSwitcher.GetStartIndex(), std::min(PageSwitcher.GetStartIndex() + 10, ItemMatrix.GetSize()));
 
 			if (PageSwitcher.Click(Window))
 			{

@@ -10,7 +10,7 @@ class InputHandler
 public:
     InputHandler();
 
-    void handleInput(sf::RenderWindow& InWindow, const sf::Event& event, std::vector<ItemWidget>& widgets);
+    void handleInput(sf::RenderWindow& InWindow, const sf::Event& event, std::vector<ItemWidget>& widgets, int startIndex, int endIndex);
 
 private:
     std::pair<int, ItemWidget::WidgetState> activeWidget;
