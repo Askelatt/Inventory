@@ -1,7 +1,7 @@
 #include "GUI.h"
 
 GUI::GUI(Inventory& InInvetory)
-	: ItemMatrix(InInvetory), PageSwitcher(ItemMatrix, 10)
+	: ItemMatrix(InInvetory), PageSwitcher(ItemMatrix, 10), AddItem(ItemMatrix)
 
 {
 	BackGroundTexture.loadFromFile("..\\SFML_inv\\Textures\\BackGround.png");
@@ -23,12 +23,18 @@ void GUI::runApp(Inventory& InInventory)
 				DataHandler.saveInventoryToFile(InInventory.GetInventory());
 			}
 			Handler.handleInput(Window,WindowEvent, ItemMatrix.GetWidgets(), PageSwitcher.GetStartIndex(), std::min(PageSwitcher.GetStartIndex() + 10, ItemMatrix.GetSize()));
+			AddItem.Click(Window);
 
 			if (PageSwitcher.Click(Window))
 			{
 				ItemMatrix.SetStartIndex(PageSwitcher.GetStartIndex());
-				std::cout << PageSwitcher.GetStartIndex() << std::endl;
-				std::cout << ItemMatrix.StartIndex << std::endl;
+			}
+
+			if(AddItem.Click(Window))
+			{
+				InInventory.AddItem();
+				DataHandler.addItemToFile();
+				ItemMatrix.UpdateWidgetArray(InInventory);
 			}
 		}
 
@@ -36,6 +42,7 @@ void GUI::runApp(Inventory& InInventory)
 		Window.draw(BackGroundSprite);
 		ItemMatrix.draw(Window);
 		PageSwitcher.Draw(Window);
+		AddItem.Draw(Window);
 		Window.display();
 	}
 
