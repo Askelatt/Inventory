@@ -10,13 +10,15 @@ private:
 
 	void initWidgetArray(Inventory& InInventory);
 
+	
+
 public:
 
 	InventoryMatrix(Inventory& InInventory);
 
 	std::vector <ItemWidget>& GetWidgets();
-
-
+	int StartIndex = 0;
+	void SetStartIndex(int InIndex);
 	void draw(sf::RenderTarget& WindowTarget);
 };
 

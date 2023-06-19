@@ -3,6 +3,7 @@
 #include "Inventory.h"
 #include "HandleInput.h"
 #include "XMLDataHandler.h"
+#include "ItemPageSwitcher.h"
 
 class GUI
 {
@@ -11,6 +12,7 @@ private:
 	InventoryMatrix ItemMatrix;
 	InputHandler Handler;
 	XMLDataHandler DataHandler;
+	ItemPageSwitcher PageSwitcher;
 
 	sf::Event WindowEvent;
 

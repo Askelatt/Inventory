@@ -22,7 +22,8 @@ public:
 	void updateText();
 	void SetSpawnPosition(int x, int y);
 	void InitTextures();
-	WidgetState UpdateWidgetState(sf::RenderWindow& InWindow, const sf::Vector2f& Point);
+	const sf::Vector2f GetPosition() const;
+	WidgetState UpdateWidgetState(sf::RenderWindow& InWindow);
 
 private:
 
