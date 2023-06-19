@@ -25,6 +25,11 @@ void InventoryMatrix::SetStartIndex(int InIndex)
 	StartIndex = InIndex;
 }
 
+int InventoryMatrix::GetSize()
+{
+	return ItemWidgetArray.size();
+}
+
 void InventoryMatrix::draw(sf::RenderTarget& WindowTarget)
 {
 	
