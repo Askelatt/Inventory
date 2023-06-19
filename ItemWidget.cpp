@@ -89,12 +89,13 @@ void ItemWidget::updateText()
 
 void ItemWidget::SetSpawnPosition(int x, int y)
 {
+	int ItemIdMod10 = (OwnItem.GetItemID() - 1) % 10 + 1;
 	//spawn pos of sprites
-	ItemIDSprite.setPosition(x, y + OwnItem.GetItemID() * 50);
-	ItemNameSprite.setPosition(x + 50, y + OwnItem.GetItemID() * 50);
-	ItemDescriptionSprite.setPosition(x + 350, y + OwnItem.GetItemID() * 50);
-	ItemLocationSprite.setPosition(x + 850, y + OwnItem.GetItemID() * 50);
-	ItemQuantitySprite.setPosition(x + 1150, y + OwnItem.GetItemID() * 50);
+	ItemIDSprite.setPosition(x, y + ItemIdMod10 * 50);
+	ItemNameSprite.setPosition(x + 50, y + ItemIdMod10 * 50);
+	ItemDescriptionSprite.setPosition(x + 350, y + ItemIdMod10 * 50);
+	ItemLocationSprite.setPosition(x + 850, y + ItemIdMod10 * 50);
+	ItemQuantitySprite.setPosition(x + 1150, y + ItemIdMod10 * 50);
 	//spawn pos of text
 	ItemIDText.setPosition(ItemIDSprite.getPosition().x + 10, ItemIDSprite.getPosition().y + 10);
 	ItemNameText.setPosition(ItemNameSprite.getPosition().x + 10, ItemNameSprite.getPosition().y + 10);
@@ -149,7 +150,12 @@ void ItemWidget::InitTextures()
 	}
 }
 
-ItemWidget::WidgetState ItemWidget::UpdateWidgetState(sf::RenderWindow& InWindow, const sf::Vector2f& Point)
+const sf::Vector2f ItemWidget::GetPosition() const
+{
+	return ItemIDSprite.getPosition();
+}
+
+ItemWidget::WidgetState ItemWidget::UpdateWidgetState(sf::RenderWindow& InWindow)
 {
 	sf::Vector2i PixelPos = sf::Mouse::getPosition(InWindow);
 	sf::Vector2f WorldPos = InWindow.mapPixelToCoords(PixelPos);

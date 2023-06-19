@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Inventory>
-    <Item name="Firehose" description="Hose for fire box" location="Fire Locker" ID="1" quantity="19"/>
-    <Item name="Extinguisher number one" description="Foam Extunguishere" location="Fire Station" ID="2" quantity="2032"/>
+    <Item name="Firehose" description="Hose for fire box" location="Fire Locker" ID="1" quantity="192"/>
+    <Item name="Extinguisher" description="Foam Extunguisher" location="Fire Station" ID="2" quantity="2032"/>
     <Item name="Nozzle" description="Nozzle 15cm for fire hose" location="Fire Locker" ID="3" quantity="10"/>
     <Item name="Hydrant" description="Hydrant straight" location="Fire Locker" ID="4" quantity="30"/>
     <Item name="SOLAS tape" description="SOLAS tape 2m" location="Forecastle store" ID="5" quantity="20"/>
@@ -14,4 +14,16 @@
     <Item name="Fire plan" description="no" location="Paint locker" ID="12" quantity="8175"/>
     <Item name="Rubber" description="no" location="Forecastle store" ID="13" quantity="815"/>
     <Item name="asd" description="no" location="Fire Station" ID="14" quantity="344915"/>
+    <Item name="Food" description="Nozzle 15cm for fire hose" location="Fire Locker" ID="15" quantity="10"/>
+    <Item name="Bread" description="Hydrant straight" location="Fire Locker" ID="16" quantity="30"/>
+    <Item name="Dont tape" description="SOLAS tape 2m" location="Forecastle store" ID="17" quantity="20"/>
+    <Item name="Life" description="Lifebuoy 80mm diametr" location="Forecastle store" ID="18" quantity="10"/>
+    <Item name="Veget" description="Torch not for use" location="Fire Locker" ID="19" quantity="10"/>
+    <Item name="Vod" description="Axe from firefighting suit" location="Fire Station" ID="20" quantity="10"/>
+    <Item name="Water sign" description="no" location="Paint locker" ID="21" quantity="10"/>
+    <Item name="Fire" description="no" location="Fire Station" ID="22" quantity="10"/>
+    <Item name="Hydrant key" description="no" location="Fire Station" ID="23" quantity="10"/>
+    <Item name="Fire plan" description="no" location="Paint locker" ID="24" quantity="8175"/>
+    <Item name="Rubber" description="no" location="Forecastle store" ID="25" quantity="815"/>
+    <Item name="asd" description="no" location="Fire Station" ID="26" quantity="344915"/>
 </Inventory>

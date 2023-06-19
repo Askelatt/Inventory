@@ -20,10 +20,15 @@ void InventoryMatrix::initWidgetArray(Inventory& InInventory)
 	}
 }
 
+void InventoryMatrix::SetStartIndex(int InIndex)
+{
+	StartIndex = InIndex;
+}
+
 void InventoryMatrix::draw(sf::RenderTarget& WindowTarget)
 {
 	
-	for (size_t i = 0; i < ItemWidgetArray.size() && i < 10; i++)
+	for (size_t i = StartIndex; i < ItemWidgetArray.size() && i < StartIndex + 10; i++)
 	{
 		ItemWidgetArray[i].Draw(WindowTarget);
 	}
