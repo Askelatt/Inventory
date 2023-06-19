@@ -9,7 +9,7 @@ private:
 	std::vector <ItemWidget> ItemWidgetArray;
 
 	void initWidgetArray(Inventory& InInventory);
-
+	
 	
 
 public:
@@ -20,6 +20,7 @@ public:
 	int StartIndex = 0;
 	void SetStartIndex(int InIndex);
 	int GetSize();
+	void UpdateWidgetArray(Inventory& InInventory);
 	void draw(sf::RenderTarget& WindowTarget);
 };
 

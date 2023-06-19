@@ -10,12 +10,12 @@ class InputHandler
 public:
     InputHandler();
 
-    void handleInput(sf::RenderWindow& InWindow, const sf::Event& event, std::vector<ItemWidget>& widgets, int startIndex, int endIndex);
+    void handleInput(sf::RenderWindow& InWindow, const sf::Event& Event, std::vector<ItemWidget>& Widgets, int StartIndex, int EndIndex);
 
 private:
-    std::pair<int, ItemWidget::WidgetState> activeWidget;
-    std::string initialText;
+    std::pair<int, ItemWidget::WidgetState> ActiveWidget;
+    std::string InitialText;
 
-    std::string getItemValue(const Item& item, ItemWidget::WidgetState widgetState);
-    void setItemValue(Item& item, ItemWidget::WidgetState widgetState, const std::string& value);
+    std::string getItemValue(const Item& Item, ItemWidget::WidgetState WidgetState);
+    void setItemValue(Item& item, ItemWidget::WidgetState WidgetState, const std::string& Value);
 };

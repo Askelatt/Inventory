@@ -1,107 +1,107 @@
 #include "HandleInput.h"
 
 InputHandler::InputHandler()
-    : activeWidget(-1, ItemWidget::WidgetState::Idle)
+    : ActiveWidget(-1, ItemWidget::WidgetState::Idle)
 {
 
 }
 
-void InputHandler::handleInput(sf::RenderWindow& InWindow, const sf::Event& event, std::vector<ItemWidget>& widgets, int startIndex, int endIndex)
+void InputHandler::handleInput(sf::RenderWindow& InWindow, const sf::Event& InEvent, std::vector<ItemWidget>& InWidgets, int InStartIndex, int InEndIndex)
 {
     
-    if (event.type == sf::Event::MouseButtonPressed)
+    if (InEvent.type == sf::Event::MouseButtonPressed)
     {
         
-        for (int i = startIndex; i < endIndex; ++i)
+        for (int i = InStartIndex; i < InEndIndex; ++i)
         {
-            ItemWidget::WidgetState state = widgets[i].UpdateWidgetState(InWindow );
+            ItemWidget::WidgetState state = InWidgets[i].UpdateWidgetState(InWindow );
             if (state != ItemWidget::WidgetState::Idle)
             {
-                activeWidget = std::make_pair(i, state);
-                initialText = getItemValue(widgets[activeWidget.first].OwnItem, activeWidget.second); // get and save initial value of parameter
-                widgets[activeWidget.first].updateText();
+                ActiveWidget = std::make_pair(i, state);
+                InitialText = getItemValue(InWidgets[ActiveWidget.first].OwnItem, ActiveWidget.second); // get and save initial value of parameter
+                InWidgets[ActiveWidget.first].updateText();
             }
         }
     }
-    else if (event.type == sf::Event::TextEntered && activeWidget.second != ItemWidget::WidgetState::Idle)
+    else if (InEvent.type == sf::Event::TextEntered && ActiveWidget.second != ItemWidget::WidgetState::Idle)
     {
-        if (event.text.unicode > 31 && event.text.unicode != 127)
+        if (InEvent.text.unicode > 31 && InEvent.text.unicode != 127)
         {
-            char typedChar = static_cast<char>(event.text.unicode);
+            char typedChar = static_cast<char>(InEvent.text.unicode);
 
-            switch (activeWidget.second)
+            switch (ActiveWidget.second)
             {
             case ItemWidget::WidgetState::Btn_Active_Name:
-                widgets[activeWidget.first].OwnItem.SetItemName(getItemValue(widgets[activeWidget.first].OwnItem, activeWidget.second) + typedChar);
+                InWidgets[ActiveWidget.first].OwnItem.SetItemName(getItemValue(InWidgets[ActiveWidget.first].OwnItem, ActiveWidget.second) + typedChar);
                 break;
             case ItemWidget::WidgetState::Btn_Active_Description:
-                widgets[activeWidget.first].OwnItem.SetItemDescription(getItemValue(widgets[activeWidget.first].OwnItem, activeWidget.second) + typedChar);
+                InWidgets[ActiveWidget.first].OwnItem.SetItemDescription(getItemValue(InWidgets[ActiveWidget.first].OwnItem, ActiveWidget.second) + typedChar);
                 break;
             case ItemWidget::WidgetState::Btn_Active_Location:
-                widgets[activeWidget.first].OwnItem.SetItemLocation(getItemValue(widgets[activeWidget.first].OwnItem, activeWidget.second) + typedChar);
+                InWidgets[ActiveWidget.first].OwnItem.SetItemLocation(getItemValue(InWidgets[ActiveWidget.first].OwnItem, ActiveWidget.second) + typedChar);
                 break;
             case ItemWidget::WidgetState::Btn_Active_Quantity:
                 if (std::isdigit(typedChar))
                 {
-                    widgets[activeWidget.first].OwnItem.SetItemQuantity(std::stoi(std::to_string(widgets[activeWidget.first].OwnItem.GetItemQuantity()) + typedChar));
+                    InWidgets[ActiveWidget.first].OwnItem.SetItemQuantity(std::stoi(std::to_string(InWidgets[ActiveWidget.first].OwnItem.GetItemQuantity()) + typedChar));
                 }
                 break;
             case ItemWidget::WidgetState::Btn_Active_ID:
                 if (std::isdigit(typedChar))
                 {
-                    widgets[activeWidget.first].OwnItem.SetItemID(std::stoi(std::to_string(widgets[activeWidget.first].OwnItem.GetItemID()) + typedChar));
+                    InWidgets[ActiveWidget.first].OwnItem.SetItemID(std::stoi(std::to_string(InWidgets[ActiveWidget.first].OwnItem.GetItemID()) + typedChar));
                 }
                 break;
             }
-            widgets[activeWidget.first].updateText();
+            InWidgets[ActiveWidget.first].updateText();
         }
     }
-    else if (event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::BackSpace && activeWidget.second != ItemWidget::WidgetState::Idle)
+    else if (InEvent.type == sf::Event::KeyPressed && InEvent.key.code == sf::Keyboard::BackSpace && ActiveWidget.second != ItemWidget::WidgetState::Idle)
     {
-        switch (activeWidget.second)
+        switch (ActiveWidget.second)
         {
         case ItemWidget::WidgetState::Btn_Active_Name:
-            if (!widgets[activeWidget.first].OwnItem.GetItemName().empty())
+            if (!InWidgets[ActiveWidget.first].OwnItem.GetItemName().empty())
             {
-                widgets[activeWidget.first].OwnItem.SetItemName(getItemValue(widgets[activeWidget.first].OwnItem, activeWidget.second).substr(0, getItemValue(widgets[activeWidget.first].OwnItem, activeWidget.second).size() - 1));
+                InWidgets[ActiveWidget.first].OwnItem.SetItemName(getItemValue(InWidgets[ActiveWidget.first].OwnItem, ActiveWidget.second).substr(0, getItemValue(InWidgets[ActiveWidget.first].OwnItem, ActiveWidget.second).size() - 1));
             }
             break;
         case ItemWidget::WidgetState::Btn_Active_Description:
-            if (!widgets[activeWidget.first].OwnItem.GetItemDescription().empty())
+            if (!InWidgets[ActiveWidget.first].OwnItem.GetItemDescription().empty())
             {
-                widgets[activeWidget.first].OwnItem.SetItemDescription(getItemValue(widgets[activeWidget.first].OwnItem, activeWidget.second).substr(0, getItemValue(widgets[activeWidget.first].OwnItem, activeWidget.second).size() - 1));
+                InWidgets[ActiveWidget.first].OwnItem.SetItemDescription(getItemValue(InWidgets[ActiveWidget.first].OwnItem, ActiveWidget.second).substr(0, getItemValue(InWidgets[ActiveWidget.first].OwnItem, ActiveWidget.second).size() - 1));
             }
             break;
         case ItemWidget::WidgetState::Btn_Active_Location:
-            if (!widgets[activeWidget.first].OwnItem.GetItemLocation().empty())
+            if (!InWidgets[ActiveWidget.first].OwnItem.GetItemLocation().empty())
             {
-                widgets[activeWidget.first].OwnItem.SetItemLocation(getItemValue(widgets[activeWidget.first].OwnItem, activeWidget.second).substr(0, getItemValue(widgets[activeWidget.first].OwnItem, activeWidget.second).size() - 1));
+                InWidgets[ActiveWidget.first].OwnItem.SetItemLocation(getItemValue(InWidgets[ActiveWidget.first].OwnItem, ActiveWidget.second).substr(0, getItemValue(InWidgets[ActiveWidget.first].OwnItem, ActiveWidget.second).size() - 1));
             }
             break;
         case ItemWidget::WidgetState::Btn_Active_Quantity:
-            widgets[activeWidget.first].OwnItem.SetItemQuantity(widgets[activeWidget.first].OwnItem.GetItemQuantity() / 10);
+            InWidgets[ActiveWidget.first].OwnItem.SetItemQuantity(InWidgets[ActiveWidget.first].OwnItem.GetItemQuantity() / 10);
             break;
         case ItemWidget::WidgetState::Btn_Active_ID:
-            widgets[activeWidget.first].OwnItem.SetItemID(widgets[activeWidget.first].OwnItem.GetItemID() / 10);
+            InWidgets[ActiveWidget.first].OwnItem.SetItemID(InWidgets[ActiveWidget.first].OwnItem.GetItemID() / 10);
             break;
         }
-        widgets[activeWidget.first].updateText();
+        InWidgets[ActiveWidget.first].updateText();
     }
-    else if (event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::Enter && activeWidget.second != ItemWidget::WidgetState::Idle)
+    else if (InEvent.type == sf::Event::KeyPressed && InEvent.key.code == sf::Keyboard::Enter && ActiveWidget.second != ItemWidget::WidgetState::Idle)
     {
        //save final value after Enter was pressed
-        std::string newValue = getItemValue(widgets[activeWidget.first].OwnItem, activeWidget.second);
+        std::string newValue = getItemValue(InWidgets[ActiveWidget.first].OwnItem, ActiveWidget.second);
         //reset of active widget after saving of value
-        activeWidget = std::make_pair(-1, ItemWidget::WidgetState::Idle);
+        ActiveWidget = std::make_pair(-1, ItemWidget::WidgetState::Idle);
     }
-    else if (event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::Escape && activeWidget.second != ItemWidget::WidgetState::Idle)
+    else if (InEvent.type == sf::Event::KeyPressed && InEvent.key.code == sf::Keyboard::Escape && ActiveWidget.second != ItemWidget::WidgetState::Idle)
     {
         // return initial value if Escape was pressed
-        setItemValue(widgets[activeWidget.first].OwnItem, activeWidget.second, initialText);
-        widgets[activeWidget.first].updateText();
+        setItemValue(InWidgets[ActiveWidget.first].OwnItem, ActiveWidget.second, InitialText);
+        InWidgets[ActiveWidget.first].updateText();
 
          //reset of active widget after returning of initial value
-        activeWidget = std::make_pair(-1, ItemWidget::WidgetState::Idle);
+        ActiveWidget = std::make_pair(-1, ItemWidget::WidgetState::Idle);
     }
 }
 
@@ -120,18 +120,18 @@ std::string InputHandler::getItemValue(const Item& item, ItemWidget::WidgetState
     }
 }
 
-void InputHandler::setItemValue(Item& item, ItemWidget::WidgetState widgetState, const std::string& value)
+void InputHandler::setItemValue(Item& InItem, ItemWidget::WidgetState InWidgetState, const std::string& InValue)
 {
-    switch (widgetState)
+    switch (InWidgetState)
     {
     case ItemWidget::WidgetState::Btn_Active_Name:
-        item.SetItemName(value);
+        InItem.SetItemName(InValue);
         break;
     case ItemWidget::WidgetState::Btn_Active_Description:
-        item.SetItemDescription(value);
+        InItem.SetItemDescription(InValue);
         break;
     case ItemWidget::WidgetState::Btn_Active_Location:
-        item.SetItemLocation(value);
+        InItem.SetItemLocation(InValue);
         break;
     }
 }

@@ -15,5 +15,8 @@ public:
 
 	void LoadInventoryFromFile(Inventory& InInvetory);
 	void saveInventoryToFile(const std::vector<Item> InItemsArray);
+	void addItemToFile();
+	
+
 };
 

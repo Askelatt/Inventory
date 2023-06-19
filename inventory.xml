@@ -1,29 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Inventory>
-    <Item name="Firehose" description="Hose for fire box" location="Fire Locker" ID="1" quantity="192"/>
-    <Item name="Extinguisher" description="Foam Extunguisher" location="Fire Station" ID="2" quantity="2032"/>
-    <Item name="Nozzle" description="Nozzle 15cm for fire hose" location="Fire Locker" ID="3" quantity="10"/>
-    <Item name="Hydrant" description="Hydrant straight" location="Fire Locker" ID="4" quantity="30"/>
-    <Item name="SOLAS tape" description="SOLAS tape 2m" location="Forecastle store" ID="5" quantity="20"/>
-    <Item name="Lifebuoy" description="Lifebuoy 80mm diametr" location="Forecastle store" ID="6" quantity="10"/>
-    <Item name="Torch" description="Torch not for use" location="Fire Locker" ID="7" quantity="10"/>
-    <Item name="Axe" description="Axe from firefighting suit" location="Fire Station" ID="8" quantity="10"/>
-    <Item name="IMO sign" description="no" location="Paint locker" ID="9" quantity="10"/>
-    <Item name="Fireblanket" description="no" location="Fire Station" ID="10" quantity="10"/>
-    <Item name="Hydrant key" description="no" location="Fire Station" ID="11" quantity="10"/>
-    <Item name="Fire plan" description="no" location="Paint locker" ID="12" quantity="8175"/>
-    <Item name="Rubber" description="no" location="Forecastle store" ID="13" quantity="815"/>
-    <Item name="asd" description="no" location="Fire Station" ID="14" quantity="344"/>
-    <Item name="Food" description="Nozzle 15cm for fire hose" location="Fire Locker" ID="15" quantity="10"/>
-    <Item name="Bread" description="Hydrant straight" location="Fire Locker" ID="16" quantity="30"/>
-    <Item name="Dont tape" description="SOLAS tape 2m" location="Forecastle store" ID="17" quantity="20"/>
-    <Item name="Life" description="Lifebuoy 80mm diametr" location="Forecastle store" ID="18" quantity="10"/>
-    <Item name="Veget" description="Torch not for use" location="Fire Locker" ID="19" quantity="10"/>
-    <Item name="Vod" description="Axe from firefighting suit" location="Fire Station" ID="20" quantity="10"/>
-    <Item name="Water sign" description="no" location="Paint locker" ID="21" quantity="10"/>
-    <Item name="Firesadasdasd" description="no" location="Fire Station" ID="22" quantity="10"/>
-    <Item name="Hydrant keyasdsadasd" description="no" location="Fire Station" ID="23" quantity="10"/>
-    <Item name="Fire plan" description="no" location="Paint locker" ID="24" quantity="8175"/>
-    <Item name="Rubber" description="no" location="Forecastle store" ID="25" quantity="815"/>
-    <Item name="asd" description="no" location="Fire Station" ID="26" quantity="344915"/>
+    <Item name="Ballpoint Pen" description="A common writing tool" location="Drawer" quantity="10" ID="1"/>
+    <Item name="Pencil" description="Ideal for sketching and writing" location="Pencil Case" quantity="15" ID="2"/>
+    <Item name="Eraser" description="Removes pencil marks" location="Pencil Case" quantity="5" ID="3"/>
+    <Item name="Notebook" description="A place to jot down notes" location="Backpack" quantity="3" ID="4"/>
+    <Item name="Highlighter" description="Bright colors for emphasis" location="Drawer" quantity="4" ID="5"/>
+    <Item name="Ruler" description="For straight lines and measurements" location="Backpack" quantity="1" ID="6"/>
+    <Item name="Stapler" description="Connects pages together" location="Drawer" quantity="1" ID="7"/>
+    <Item name="Staples" description="Needed for stapler" location="Drawer" quantity="500" ID="8"/>
+    <Item name="Scissors" description="For cutting paper" location="Drawer" quantity="1" ID="9"/>
+    <Item name="Paper Clips" description="Holds papers together" location="Drawer" quantity="50" ID="10"/>
+    <Item name="Binder" description="For holding loose papers" location="Shelf" quantity="2" ID="11"/>
+    <Item name="Paper" description="For writing or printing" location="Drawer" quantity="200" ID="12"/>
+    <Item name="Post-It Notes" description="For reminders" location="Desk" quantity="2" ID="13"/>
+    <Item name="Glue Stick" description="Adhesive for paper" location="Pencil Case" quantity="1" ID="14"/>
+    <Item name="Whiteboard Marker" description="For writing on whiteboards" location="Drawer" quantity="5" ID="15"/>
+    <Item name="Calculator" description="For mathematical calculations" location="Backpack" quantity="1" ID="16"/>
+    <Item name="Hole Punch" description="For adding holes to papers" location="Drawer" quantity="1" ID="17"/>
+    <Item name="Pencil Sharpener" description="For sharpening pencils" location="Pencil Case" quantity="1" ID="18"/>
+    <Item name="Clipboard" description="For holding papers" location="Shelf" quantity="1" ID="19"/>
+    <Item name="File Folder" description="For organizing documents" location="Shelf" quantity="10" ID="20"/>
+    <Item name="Rubber Band" description="Holds things together" location="Drawer" quantity="20" ID="21"/>
+    <Item name="Envelopes" description="For sending letters" location="Drawer" quantity="15" ID="22"/>
+    <Item name="Correction Tape" description="For correcting errors" location="Pencil Case" quantity="2" ID="23"/>
+    <Item name="Fountain Pen" description="Elegant writing instrument" location="Drawer" quantity="1" ID="24"/>
+    <Item name="Ink Cartridge" description="Ink supply for fountain pen" location="Drawer" quantity="5" ID="25"/>
+    <Item name="Permanent Marker" description="Writes on various surfaces" location="Drawer" quantity="2" ID="26"/>
+    <Item name="Sticky Tape" description="Adhesive tape" location="Drawer" quantity="1" ID="27"/>
+    <Item name="Label Maker" description="For creating labels" location="Drawer" quantity="1" ID="28"/>
+    <Item name="Labels" description="For organizing and marking" location="Drawer" quantity="100" ID="29"/>
+    <Item name="Staple Remover" description="Removes staples" location="Drawer" quantity="1" ID="30"/>
+    <Item name="0" description="0" location="0" quantity="0" ID="31"/>
 </Inventory>

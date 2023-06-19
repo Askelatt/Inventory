@@ -56,7 +56,6 @@ private:
 	//Font for text
 	sf::Font& TextFont;
 	//State of Widget
-	WidgetState WidgState = WidgetState::Idle;
 
 };
 

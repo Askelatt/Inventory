@@ -39,3 +39,25 @@ void XMLDataHandler::saveInventoryToFile(const std::vector<Item> InItemsArray)
 	InXMLDocument.SaveFile("inventory.xml");
 	std::cout << "Inventory was saved" << std::endl;
 }
+
+void XMLDataHandler::addItemToFile()
+{
+	tinyxml2::XMLDocument InXMLDocument;
+	InXMLDocument.LoadFile(FileName.c_str());
+	tinyxml2::XMLElement* Root = InXMLDocument.FirstChildElement("Inventory");
+
+	// Create new item element
+	tinyxml2::XMLElement* NewItem = InXMLDocument.NewElement("Item");
+
+	NewItem->SetAttribute("name", "0");
+	NewItem->SetAttribute("description", "0");
+	NewItem->SetAttribute("location", "0");
+	NewItem->SetAttribute("quantity", 0);
+	NewItem->SetAttribute("ID", 0);
+
+	// Add new item to the root
+	Root->InsertEndChild(NewItem);
+
+	InXMLDocument.SaveFile(FileName.c_str());
+	std::cout << "New item was added and saved to the inventory" << std::endl;
+}
