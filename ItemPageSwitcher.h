@@ -1,6 +1,7 @@
 #pragma once
 #include "Button.h"
 #include "InventoryMatrix.h"
+#include <iostream>
 
 class ItemPageSwitcher : public Button
 {

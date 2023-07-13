@@ -42,9 +42,10 @@ int InventoryMatrix::GetSize()
 
 void InventoryMatrix::draw(sf::RenderTarget& WindowTarget)
 {
-	
+	std::cout << "START " << std::endl;
 	for (size_t i = StartIndex; i < ItemWidgetArray.size() && i < StartIndex + 10; i++)
 	{
+		std::cout << "i is : " << i << std::endl;
 		ItemWidgetArray[i].Draw(WindowTarget);
 	}
 	
