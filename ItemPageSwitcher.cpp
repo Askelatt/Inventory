@@ -36,7 +36,8 @@ bool ItemPageSwitcher::Click(sf::RenderWindow& InWindow)
 			StartIndex -= ItemsPerPage;
 			if (StartIndex < 0)
 			{
-				StartIndex = StartIndex - ItemsPerPage < 0 ? ItemMatrix.GetWidgets().size() - ItemsPerPage : StartIndex - ItemsPerPage;
+				StartIndex = ItemMatrix.GetSize() - ItemMatrix.GetSize() % 10;
+				std::cout << StartIndex << std::endl;
 				return true;
 			}
 			return true;

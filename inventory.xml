@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Inventory>
-    <Item name="Ballpoint Pen" description="A common writing tool" location="Drawer" quantity="10" ID="1"/>
+    <Item name="Ballpoint" description="A common writinge" location="Drawer" quantity="15123" ID="1"/>
     <Item name="Pencil" description="Ideal for sketching and writing" location="Pencil Case" quantity="15" ID="2"/>
     <Item name="Eraser" description="Removes pencil marks" location="Pencil Case" quantity="5" ID="3"/>
     <Item name="Notebook" description="A place to jot down notes" location="Backpack" quantity="3" ID="4"/>
@@ -31,4 +31,14 @@
     <Item name="Labels" description="For organizing and marking" location="Drawer" quantity="100" ID="29"/>
     <Item name="Staple Remover" description="Removes staples" location="Drawer" quantity="1" ID="30"/>
     <Item name="0" description="0" location="0" quantity="0" ID="31"/>
+    <Item name="0" description="0" location="0" quantity="0" ID="32"/>
+    <Item name="0" description="0" location="0" quantity="0" ID="33"/>
+    <Item name="0" description="0" location="0" quantity="0" ID="34"/>
+    <Item name="0" description="0" location="0" quantity="0" ID="35"/>
+    <Item name="0" description="0" location="0" quantity="0" ID="36"/>
+    <Item name="0" description="0" location="0" quantity="0" ID="37"/>
+    <Item name="0213" description="sdfsdf" location="0" quantity="0" ID="38"/>
+    <Item name="0" description="0" location="0" quantity="0" ID="39"/>
+    <Item name="0" description="0" location="0" quantity="0" ID="40"/>
+    <Item name="0" description="0" location="0" quantity="0" ID="41"/>
 </Inventory>
